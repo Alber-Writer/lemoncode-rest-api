@@ -21,10 +21,10 @@
       "name": "Burlingame"
     }
   ],
-  "hotels": [
+  "characters": [
     {
       "id": "1",
-      "type": "hotel",
+      "type": "character",
       "name": "Motif Seattle",
       "created": 1464777092568,
       "modified": 1464777618676,
