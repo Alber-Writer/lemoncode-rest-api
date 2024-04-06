@@ -1,8 +1,3 @@
-export interface CharacterEntityVm {
-  id: string;
-  picture: string;
-  name: string;
-  description: string;
-  rating: number;
-  address: string;
-}
+import {Character} from "common/interfaces/rick-and-morty.api.types"
+
+export interface CharacterEntityVm extends Character{}

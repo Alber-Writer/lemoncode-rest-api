@@ -1,17 +1,26 @@
-export interface Character {
-  id: string;
-  name: string;
-  description: string;
-  rating: number;
-  address: string;
-  city: string;
+import {Character as ImportedCharacterType} from 'common/interfaces/rick-and-morty.api.types'
+export interface Character extends ImportedCharacterType{
 }
 
 export const createEmptyCharacter = (): Character => ({
-  id: '',
+  id: 1,
   name: '',
-  description: '',
-  rating: 3,
-  address: '',
-  city: '',
+  status: 'unknown',
+  species: '',
+  type: '',
+  gender: 'unknown',
+  origin: {
+    name: '',
+    url: '',
+  },
+  location: {
+    name: '',
+    url: '',
+  },
+  image: '',
+  episode: [
+    '',
+  ],
+  url: '',
+  created: '',
 });

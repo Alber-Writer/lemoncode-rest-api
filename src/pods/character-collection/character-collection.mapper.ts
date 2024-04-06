@@ -4,10 +4,23 @@ import * as viewModel from './character-collection.vm';
 export const mapFromApiToVm = (
   character: apiModel.CharacterEntityApi
 ): viewModel.CharacterEntityVm => ({
+  // picture: `${process.env.BASE_PICTURES_URL}/${character.thumbNailUrl}`,
   id: character.id,
-  picture: `${process.env.BASE_PICTURES_URL}/${character.thumbNailUrl}`,
   name: character.name,
-  description: character.shortDescription,
-  rating: character.characterRating,
-  address: character.address1,
+  status: character.status,
+  species: character.species,
+  type: character.type,
+  gender: character.gender,
+  origin: {
+    name: character.origin.name,
+    url: character.origin.url,
+  },
+  location: {
+    name: character.location.name,
+    url: character.location.url,
+  },
+  image: character.image,
+  episode: character.episode,
+  url: character.url,
+  created: character.created,
 });
