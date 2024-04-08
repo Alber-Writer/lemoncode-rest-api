@@ -10,3 +10,4 @@ junit.xml
 public
 cypress/screenshots
 cypress/videos
+*.ignore*
