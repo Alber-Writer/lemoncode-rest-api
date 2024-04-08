@@ -12,11 +12,6 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const handleLoadCityCollection = async () => {
-    const apiCities = await api.getCities();
-    // setCities(apiCities);
-  };
-
   const handleLoadCharacter = async () => {
     const apiCharacter = await api.getCharacter(parseInt(id));
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
@@ -38,7 +33,5 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
       alert('Error on save character');
     }
   };
-
-  // return <CharacterComponent character={character} cities={cities} onSave={handleSave} />;
   return <CharacterComponent character={character} onSave={handleSave} />;
 };

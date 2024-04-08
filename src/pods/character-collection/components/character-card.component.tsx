@@ -14,7 +14,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
   const { character, onVisit } = props;
 
   return (
-    <Card>
+    <Card sx={{maxWidth:"240px"}}>
       <CardActionArea onClick={() => onVisit(character.id)}>
         <CardHeader
           title={character.name}
@@ -23,7 +23,7 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
             <CardMedia
               image={character.image}
               title={character.name}
-              style={{ height: 0, paddingTop: '56.25%' }}
+              style={{ height: 0, paddingTop: '100%' }}
             />
       </CardActionArea>
     </Card>

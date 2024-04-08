@@ -6,16 +6,13 @@ import { useCharacterCollection } from './character-collection.hook';
 import { CharacterCollectionComponent } from './character-collection.component';
 
 export const CharacterCollectionContainer = () => {
-  const { characterCollection, loadCharacterCollection } = useCharacterCollection();
+  const { characterCollection, loadCharacterCollection, pageInfo } =
+    useCharacterCollection();
   const navigate = useNavigate();
 
   React.useEffect(() => {
     loadCharacterCollection();
   }, []);
-
-  const handleCreateCharacter = () => {
-    navigate(linkRoutes.createCharacter);
-  };
 
   const handleVisit = (id: number) => {
     navigate(linkRoutes.viewCharacter(id.toString()));
@@ -23,8 +20,8 @@ export const CharacterCollectionContainer = () => {
 
   return (
     <CharacterCollectionComponent
+      pageInfo={pageInfo}
       characterCollection={characterCollection}
-      onCreateCharacter={handleCreateCharacter}
       onView={handleVisit}
     />
   );
