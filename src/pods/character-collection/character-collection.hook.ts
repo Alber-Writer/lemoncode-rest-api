@@ -8,11 +8,11 @@ export const useCharacterCollection = () => {
   const [characterCollection, setCharacterCollection] = React.useState<
     CharacterEntityVm[]
   >([]);
-  const [pageInfo, setPageInfo] = React.useState<CharacterPagination>({});
+  const [pageInfo, setPageInfo] = React.useState<CharacterPagination | null>(null);
   // TODO: add CharacterPagination VM
 
-  const loadCharacterCollection = () => {
-    getCharacterCollection().then((result) => {
+  const loadCharacterCollection = (pageNum:number = 1) => {
+    getCharacterCollection(pageNum).then((result) => {
       const { results, info } = result;
       setPageInfo(info);
       setCharacterCollection(mapToCollection(results, mapFromApiToVm));
