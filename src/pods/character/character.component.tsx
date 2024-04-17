@@ -6,7 +6,6 @@ import { TextFieldComponent } from 'common/components';
 import { Lookup } from 'common/models';
 import { formValidation } from './character.validations';
 import { Character } from './character.vm';
-import * as classes from './character.styles';
 import {
   Box,
   Card,
@@ -24,13 +23,14 @@ import { useNavigate } from 'react-router-dom';
 
 interface Props {
   character: Character;
-  // cities: Lookup[];
   onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character } = props;
   const navigate = useNavigate();
+
+
   return (
     <Box>
       <Box display={'flex'} gap={3} justifyContent={'space-between'}>
@@ -50,7 +50,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             image={character.image}
             title={character.name}
             style={{ height: 0, paddingTop: '56.25%' }}
-          />
+          ></CardMedia>
           <CardContent>
             <Table sx={{ minWidth: 280 }} aria-label="simple table">
               <TableBody>
@@ -93,7 +93,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               <Table>
                 <TableBody>
                   {character.episode.map((e) => (
-                    <TableRow>
+                    <TableRow key={e}>
                       <TableCell>
                         <Link href={e}>{e}</Link>
                       </TableCell>

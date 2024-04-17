@@ -8,15 +8,22 @@ export const useCharacterCollection = () => {
   const [characterCollection, setCharacterCollection] = React.useState<
     CharacterEntityVm[]
   >([]);
-  const [pageInfo, setPageInfo] = React.useState<CharacterPagination | null>(null);
+  const [pageInfo, setPageInfo] = React.useState<CharacterPagination | null>(
+    null
+  );
   // TODO: add CharacterPagination VM
 
-  const loadCharacterCollection = (pageNum:number = 1) => {
-    getCharacterCollection(pageNum).then((result) => {
-      const { results, info } = result;
-      setPageInfo(info);
-      setCharacterCollection(mapToCollection(results, mapFromApiToVm));
-    });
+  const loadCharacterCollection = (pageNum: number = 1) => {
+    getCharacterCollection(pageNum)
+      .then((result) => {
+        const { results, info } = result;
+        setPageInfo(info);
+        setCharacterCollection(mapToCollection(results, mapFromApiToVm));
+      })
+      .catch((error) => {
+        alert('An error ocurred. Please enter a valid page.');
+        //TODO: improve error handling
+      });
   };
 
   return { characterCollection, loadCharacterCollection, pageInfo };

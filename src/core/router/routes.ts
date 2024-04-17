@@ -9,7 +9,7 @@ interface SwitchRoutes {
 
 export const switchRoutes: SwitchRoutes = {
   root: '/',
-  characterCollection: '/characters',
+  characterCollection: '/characters/',
   createCharacter: '/characters/create',
   viewCharacter: '/characters/:id',
 };

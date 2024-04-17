@@ -2,8 +2,7 @@ import * as React from 'react';
 import { CharacterEntityVm } from './character-collection.vm';
 import { CharacterCard } from './components/character-card.component';
 import * as classes from './character-collection.styles';
-import { CharacterPagination } from './api';
-import { Pagination } from '../../common/components/pagination/pagination';
+import { SearchCharacter } from 'pods/search-character/search-character.container';
 
 interface Props {
   characterCollection: CharacterEntityVm[];
@@ -14,9 +13,9 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
   const { characterCollection, onView } = props;
-
   return (
     <div className={classes.root}>
+      <SearchCharacter/>
       <ul className={classes.list}>
         {characterCollection.map((character) => (
           <li key={character.id}>

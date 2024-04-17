@@ -1,49 +1,49 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import {
-  Button,
-  MenuItem,
-  Select,
-  Typography,
-} from '@mui/material';
+import { Button, MenuItem, Select, Typography } from '@mui/material';
 import { usePagination } from './pagination.hook';
 
 export interface IPagination {
-  initialCurrentPage?: number;
   pagesQty: number;
   nextPage?: string | null;
   prevPage?: string | null;
-  changeEffects: () => void;
 }
 
-export const Pagination = ({
-  initialCurrentPage = 1,
+export const Pagination:React.FC<IPagination> = ({
   pagesQty = 1,
   nextPage,
   prevPage,
-  changeEffects,
-}) => {
+}:IPagination) => {
   const {
     generatePagesNumbers,
     handleSelectorChange,
-    handlePageChange,
     currentPage,
     moveOnePage,
+    goToPage,
+    urlSearchPageNum,
+    path,
+    handleNewPage
   } = usePagination();
 
   React.useEffect(() => {
-    handlePageChange(initialCurrentPage);
-  }, []);
-
-  React.useEffect(() => {
-    handlePageChange(currentPage);
-    changeEffects(currentPage);
-  }, [currentPage]);
+    handleNewPage(urlSearchPageNum);
+  }, [path]);
 
   return (
     <>
       <Box display={'flex'} gap={3}>
-        <Button variant="contained" onClick={() => moveOnePage(-1, pagesQty)} disabled={!(!!prevPage)}>
+      <Button
+          variant="outlined"
+          onClick={() => goToPage(1, pagesQty)}
+          disabled={!!!prevPage}
+        >
+          First
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() => moveOnePage(-1, pagesQty)}
+          disabled={!!!prevPage}
+        >
           Prev
         </Button>
         <Box display={'flex'} alignItems={'center'} gap={1}>
@@ -55,13 +55,26 @@ export const Pagination = ({
           >
             {pagesQty &&
               generatePagesNumbers(pagesQty).map((_, i) => (
-                <MenuItem value={i}>{i}</MenuItem>
+                <MenuItem value={i} key={i}>
+                  {i}
+                </MenuItem>
               ))}
           </Select>
           <Typography variant="h6">/ {pagesQty}</Typography>
         </Box>
-        <Button variant="contained" onClick={() => moveOnePage(+1, pagesQty)} disabled={!(!!nextPage)}>
+        <Button
+          variant="contained"
+          onClick={() => moveOnePage(+1, pagesQty)}
+          disabled={!!!nextPage}
+        >
           Next
+        </Button>
+        <Button
+          variant="outlined"
+          onClick={() => goToPage(pagesQty,pagesQty)}
+          disabled={!!!nextPage}
+        >
+          Last
         </Button>
       </Box>
     </>
