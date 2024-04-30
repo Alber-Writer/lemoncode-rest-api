@@ -7,12 +7,14 @@ export interface IPagination {
   pagesQty: number;
   nextPage?: string | null;
   prevPage?: string | null;
+  searchFilters? : string;
 }
 
 export const Pagination:React.FC<IPagination> = ({
   pagesQty = 1,
   nextPage,
   prevPage,
+  searchFilters
 }:IPagination) => {
   const {
     generatePagesNumbers,
@@ -34,14 +36,14 @@ export const Pagination:React.FC<IPagination> = ({
       <Box display={'flex'} gap={3}>
       <Button
           variant="outlined"
-          onClick={() => goToPage(1, pagesQty)}
+          onClick={() => goToPage(1, pagesQty, searchFilters)}
           disabled={!!!prevPage}
         >
           First
         </Button>
         <Button
           variant="contained"
-          onClick={() => moveOnePage(-1, pagesQty)}
+          onClick={() => moveOnePage(-1, pagesQty, searchFilters)}
           disabled={!!!prevPage}
         >
           Prev
@@ -64,14 +66,14 @@ export const Pagination:React.FC<IPagination> = ({
         </Box>
         <Button
           variant="contained"
-          onClick={() => moveOnePage(+1, pagesQty)}
+          onClick={() => moveOnePage(+1, pagesQty, searchFilters)}
           disabled={!!!nextPage}
         >
           Next
         </Button>
         <Button
           variant="outlined"
-          onClick={() => goToPage(pagesQty,pagesQty)}
+          onClick={() => goToPage(pagesQty,pagesQty, searchFilters)}
           disabled={!!!nextPage}
         >
           Last

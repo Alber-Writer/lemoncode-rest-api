@@ -23,6 +23,7 @@ export const SelectComponent: React.FunctionComponent<Props> = (props) => {
     onBlur,
     value,
     className,
+    size,
     ...otherProps
   } = props;
   const [field, meta] = Boolean(name) ? useField(name) : [];
@@ -38,6 +39,7 @@ export const SelectComponent: React.FunctionComponent<Props> = (props) => {
       error={hasError}
       fullWidth={true}
       margin="normal"
+      size={size}
     >
       <InputLabel htmlFor={name} id={labelId}>
         {label}
@@ -47,6 +49,7 @@ export const SelectComponent: React.FunctionComponent<Props> = (props) => {
         classes={{
           select: classes.select,
         }}
+        size={size}
         id={name}
         label={label}
         name={name}

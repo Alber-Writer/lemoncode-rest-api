@@ -15,9 +15,10 @@ export const usePagination = () => {
   const isValidPage = (possibleResult: number, maxLimit: number) =>
     !(possibleResult <= 0 || possibleResult > maxLimit);
 
-  const goToPage = (n: number, ofAvailable: number) => {
+  const goToPage = (n: number, ofAvailable: number, searchFilters?:string) => {
     if (isValidPage(n, ofAvailable)) setCurrentPage(n);
-    navigate(`${path.pathname}?page=${n}`);
+    const filters = searchFilters ? `&${searchFilters}` : '';
+    navigate(`${path.pathname}?page=${n}${filters}`);
   };
 
   const handleSelectorChange = (
@@ -32,9 +33,10 @@ export const usePagination = () => {
     );
   };
 
-  const moveOnePage = (step: number = 1, ofAvailable: number) => {
+  const moveOnePage = (step: number = 1, ofAvailable: number, searchFilters?:string) => {
     const possibleResult = currentPage + step;
-    goToPage(possibleResult, ofAvailable);
+    const filters = searchFilters ? searchFilters : '';
+    goToPage(possibleResult, ofAvailable, filters);
     return;
   };
 

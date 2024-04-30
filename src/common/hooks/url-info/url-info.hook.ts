@@ -1,6 +1,7 @@
-import { useLocation } from "react-router-dom";
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-export const useURLInfo = ()=>{
+export const useURLInfo = () => {
   const path = useLocation();
 
   const getSearchQueryParam = (
@@ -14,9 +15,20 @@ export const useURLInfo = ()=>{
   const getPageParam = getSearchQueryParam(path.search, 'page');
   const urlSearchPageNum = getPageParam ? parseInt(getPageParam) : 1;
 
-  return{
+  /*  */
+  const getSearchFilters = () => {
+    const url = new URLSearchParams(path.search);
+    url.delete('page');
+    return url.toString()
+  };
+  // TODO: check url info... in order to avoid undesired characters
+
+  /*  */
+
+  return {
     path,
     urlSearchPageNum,
-    getSearchQueryParam
-  }
-}
+    getSearchQueryParam,
+    getSearchFilters
+  };
+};

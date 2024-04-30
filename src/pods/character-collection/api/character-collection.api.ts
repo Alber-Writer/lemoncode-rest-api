@@ -1,19 +1,21 @@
 import Axios, { AxiosError } from 'axios';
 import {
   CharacterApiResponse,
-  CharacterEntityApi,
 } from './character-collection.api-model';
 import { mockCharacterCollection } from './character-collection.mock-data';
 import { CONSTANTS } from 'core/env';
 
 let characterCollection = [...mockCharacterCollection];
-const baseUrl = CONSTANTS.API_BASE_URL + 'character';
+const characterUrl = CONSTANTS.API_BASE_URL + 'character';
 
 export const getCharacterCollection = async (
-  pageNumber: number = 1
+  pageNumber: number = 1,
+  searchParams: string = ''
 ): Promise<CharacterApiResponse> => {
   try {
-    const { data } = await Axios.get(`${baseUrl}/?page=${pageNumber}`);
+    const { data } = await Axios.get(
+      `${characterUrl}/?page=${pageNumber}${searchParams ? `&${searchParams}` : ''}`
+    );
     return data;
   } catch (error) {
     if (isNotFoundError(error)) {
