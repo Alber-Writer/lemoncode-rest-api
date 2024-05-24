@@ -1,7 +1,7 @@
-import { mapFromApiToVm } from './character-collection.mapper';
+import { mapFromApiToVm } from './episode-collection.mapper';
 import { useApiCollection } from 'core/api/api-collection.hook';
 
-export const useCharacterCollection = () => {
+export const useEpisodesCollection = () => {
   const {
     collection,
     loadCollection,
@@ -10,20 +10,21 @@ export const useCharacterCollection = () => {
     errorHandler
   } = useApiCollection({
     mapFromApiToVm: mapFromApiToVm,
-    escapeErrorLink: 'characterCollection',
-    endPoint: 'CHARACTER',
+    escapeErrorLink: 'episodeCollection',
+    endPoint: 'EPISODE',
   });
 
-  const loadCharacterCollection = (
+
+  const loadEpisodesCollection = (
     pageNum: number = 1,
     searchParams: string = ''
   ) => {
-    loadCollection(pageNum, searchParams)
+    loadCollection(pageNum,searchParams)
   };
 
   return {
-    characterCollection:collection,
-    loadCharacterCollection,
+    episodesCollection:collection,
+    loadEpisodesCollection,
     pageInfo,
     errorMessage,
     errorHandling:errorHandler,

@@ -44,13 +44,12 @@ export const SearchCharacter = () => {
         enableReinitialize={true}
         onSubmit={(values: typeof searchValues, { setSubmitting }) => {
           const query = Object.keys(values).reduce((acc, currentKey, i) => {
-            const join = i === 0 ? '' : `${acc}&`;
             if (values[currentKey]) {
-              console.log(`${join}${currentKey}=${values[currentKey]}`);
-              return `${join}${currentKey}=${values[currentKey]}`;
+              console.log(`${currentKey}=${values[currentKey]}`);
+              return [...acc, `${currentKey}=${values[currentKey]}`];
             }
-            return `${acc}`;
-          }, '');
+            return acc;
+          }, []).join('&');
           setSubmitting(false);
           if (query === getSearchFilters()) return;
           navigate(`${linkRoutes.characterCollection}?page=1&${query}`);
