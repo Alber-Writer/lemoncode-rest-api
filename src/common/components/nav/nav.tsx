@@ -6,7 +6,7 @@ export const Nav: React.FC = () => {
   const pages = [
     { name: 'Characters', link: linkRoutes.characterCollection },
     { name: 'Episodes', link: linkRoutes.episodeCollection },
-    { name: 'Locations', link: 'locations' },
+    { name: 'Locations', link: linkRoutes.locationCollection },
   ];
   return (
     <Box display={'flex'} gap={2} mx={4}>

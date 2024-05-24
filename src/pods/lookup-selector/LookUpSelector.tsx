@@ -4,38 +4,26 @@ import {
   Link as MuiLink,
   TableCell,
   TableRow,
-  Typography,
+  Typography
 } from '@mui/material';
 import { useCharacterCollection } from 'pods/character-collection/character-collection.hook';
 import { Link } from 'react-router-dom';
 import { linkRoutes } from 'core/router';
 
-import { Character } from 'common/interfaces/rick-and-morty.api.types';
-
-export interface CharacterEntityApi extends Character {}
-
-export interface CharacterPagination {
-  count: number;
-  pages: number;
-  next: string | null;
-  prev: string | null;
-}
 
 export const LookUpSelector = ({ initialList, path }) => {
   const [list, setList] = React.useState<string[]>([...initialList]);
   const {
-    characterCollection,
-    loadCharacterCollection,
-    errorMessage: apiErrorMessage,
-    errorHandling: apiErrorHandling,
+    characterCollection, loadCharacterCollection, errorMessage: apiErrorMessage, errorHandling: apiErrorHandling,
   } = useCharacterCollection();
 
+
+
   React.useEffect(() => {
-    setList((list) =>
-      list.reduce(
-        (acc, currentKey) => [...acc, extractCharacterList(currentKey)],
-        []
-      )
+    setList((list) => list.reduce(
+      (acc, currentKey) => [...acc, extractCharacterList(currentKey)],
+      []
+    )
     );
     loadCharacterCollection(1, list.join(',')); //
   }, []);
@@ -66,8 +54,7 @@ export const LookUpSelector = ({ initialList, path }) => {
                     maxWidth: '40px',
                     height: 'auto',
                     borderRadius: '100%',
-                  }}
-                />
+                  }} />
                 <Typography variant="subtitle1">{char.name}</Typography>
                 Status: {char.status} | Specie: {char.species}
               </Box>
