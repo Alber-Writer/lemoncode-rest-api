@@ -1,8 +1,8 @@
 import { Location } from './location.api-model';
 import Axios, { AxiosError } from 'axios';
-import { CONSTANTS } from 'core/env';
+import { CONSTANTS, ENDPOINTS_DEF } from 'core/env';
 
-const baseUrl = CONSTANTS.API_BASE_URL + 'location';
+const baseUrl = CONSTANTS.API_BASE_URL + ENDPOINTS_DEF.LOCATION;
 export const getLocation = async (id: number = 1): Promise<Location> => {
   try{
     const {data} = await Axios.get(`${baseUrl}/${id}`);

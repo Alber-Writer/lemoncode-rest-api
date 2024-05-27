@@ -4,16 +4,10 @@ import { mapToCollection } from 'common/mappers';
 import { useNavigate } from 'react-router-dom';
 import { LinkRoutes } from 'core/router';
 
-import { CONSTANTS } from 'core/env';
-import { getCollection } from './getCollection';
+import { CONSTANTS, ENDPOINTS_DEF } from 'core/env';
+import { getCollection } from './api/get-general-collection';
 
 export const baseUrl = CONSTANTS.API_BASE_URL;
-
-export const ENDPOINTS_DEF = {
-  EPISODE: 'episode',
-  CHARACTER: 'character',
-  LOCATION: 'location',
-};
 
 export interface StandardApiPagination {
   count: number;
@@ -24,7 +18,7 @@ export interface StandardApiPagination {
 
 export type MapFromApiToVm<AM, VM> = (AM: AM) => VM;
 
-export const useApiCollection = <AM, VM>(config: {
+export const useGeneralApiCollection = <AM, VM>(config: {
   mapFromApiToVm: MapFromApiToVm<AM, VM>;
   escapeErrorLink: keyof LinkRoutes;
   endPoint: keyof typeof ENDPOINTS_DEF;
@@ -76,6 +70,7 @@ export const useApiCollection = <AM, VM>(config: {
     errorHandler,
   };
 };
+
 export interface ApiResponse<T> {
   info: StandardApiPagination;
   results: T[];

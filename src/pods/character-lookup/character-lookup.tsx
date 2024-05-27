@@ -4,42 +4,38 @@ import {
   Link as MuiLink,
   TableCell,
   TableRow,
-  Typography
+  Typography,
 } from '@mui/material';
-import { useCharacterCollection } from 'pods/character-collection/character-collection.hook';
 import { Link } from 'react-router-dom';
 import { linkRoutes } from 'core/router';
 
+import { extractIDFromPath } from 'common/business/extract-id-from-path';
+import { useApiSpecificCollection } from 'core/api/api-specific-collection.hook';
+import { mapCharacterFromApiToVm } from 'pods/character/character.mappers';
+import { ENDPOINTS_DEF } from 'core/env';
 
-export const LookUpSelector = ({ initialList, path }) => {
-  const [list, setList] = React.useState<string[]>([...initialList]);
-  const {
-    characterCollection, loadCharacterCollection, errorMessage: apiErrorMessage, errorHandling: apiErrorHandling,
-  } = useCharacterCollection();
+interface Props{
+  initialList:string[],
+}
 
-
-
+export const CharacterLookup:React.FC<Props> = ({ initialList }:Props) => {
+  const { collection, loadCollection } = useApiSpecificCollection({
+    mapFromApiToVm: mapCharacterFromApiToVm,
+    endPoint: 'CHARACTER',
+  });
+  const extractEpisodeList = extractIDFromPath(ENDPOINTS_DEF.CHARACTER);
   React.useEffect(() => {
-    setList((list) => list.reduce(
-      (acc, currentKey) => [...acc, extractCharacterList(currentKey)],
+    const specificList = initialList.reduce(
+      (acc:string[], currentKey:string) => [...acc, extractEpisodeList(currentKey)],
       []
-    )
     );
-    loadCharacterCollection(1, list.join(',')); //
-  }, []);
-  //Pasar a business
-  const extractIDFromPath = (path: string) => {
-    const exp = new RegExp(path + '/(d{1,3})??(.*)$');
-    return function (url: string) {
-      const match = url.match(exp) ? url.match(exp)[2] : undefined;
-      return match;
-    };
-  };
-  const extractCharacterList = extractIDFromPath(path);
+
+    loadCollection(specificList.join(','));
+  }, [initialList]);
 
   return (
     <>
-      {characterCollection.map((char) => (
+      {collection.map((char) => (
         <TableRow key={char.id}>
           <TableCell>
             <MuiLink
@@ -54,7 +50,8 @@ export const LookUpSelector = ({ initialList, path }) => {
                     maxWidth: '40px',
                     height: 'auto',
                     borderRadius: '100%',
-                  }} />
+                  }}
+                />
                 <Typography variant="subtitle1">{char.name}</Typography>
                 Status: {char.status} | Specie: {char.species}
               </Box>

@@ -1,5 +1,5 @@
 import { mapFromApiToVm } from './episode-collection.mapper';
-import { useApiCollection } from 'core/api/api-collection.hook';
+import { useGeneralApiCollection } from 'core/api/api-collection.hook';
 
 export const useEpisodesCollection = () => {
   const {
@@ -8,7 +8,7 @@ export const useEpisodesCollection = () => {
     pageInfo,
     errorMessage,
     errorHandler
-  } = useApiCollection({
+  } = useGeneralApiCollection({
     mapFromApiToVm: mapFromApiToVm,
     escapeErrorLink: 'episodeCollection',
     endPoint: 'EPISODE',

@@ -1,5 +1,5 @@
 import { mapFromApiToVm } from './location-collection.mapper';
-import { useApiCollection } from 'core/api/api-collection.hook';
+import { useGeneralApiCollection } from 'core/api/api-collection.hook';
 
 export const useLocationsCollection = () => {
   const {
@@ -8,7 +8,7 @@ export const useLocationsCollection = () => {
     pageInfo,
     errorMessage,
     errorHandler
-  } = useApiCollection({
+  } = useGeneralApiCollection({
     mapFromApiToVm: mapFromApiToVm,
     escapeErrorLink: 'locationCollection',
     endPoint: 'LOCATION',

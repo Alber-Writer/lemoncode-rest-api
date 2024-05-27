@@ -11,9 +11,9 @@ export const Nav: React.FC = () => {
   return (
     <Box display={'flex'} gap={2} mx={4}>
       {pages.map((p) => {
-        const isActive = useMatch({ path: p.link, end: true });
+        const isActive = useMatch({ path: p.link, end: false });
       return (
-        <MuiLink color={isActive ? '#ffe200' : '#fff'} underline='hover' fontSize={'0.8rem'} textTransform={'uppercase'} component={Link} to={p.link}>
+        <MuiLink color={isActive ? '#ffe200' : '#fff'} underline='hover' fontSize={'0.8rem'} textTransform={'uppercase'} component={Link} to={p.link} key={p.name}>
           {p.name}
         </MuiLink>
       )})}

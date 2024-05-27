@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { LookUpSelector } from 'pods/lookup-selector/LookUpSelector';
+import { CharacterLookup } from 'pods/character-lookup/character-lookup';
 
 interface Props {
   location: Location;
@@ -26,10 +26,14 @@ export const LocationComponent: React.FunctionComponent<Props> = (props) => {
   return (
     <Box>
       <Box display={'flex'} gap={3} justifyContent={'space-between'}>
-        <Typography variant="h1" fontSize={50} marginBottom={3}>
-          {location.name}
-        </Typography>
-
+        <Box gap={2} mb={3}>
+          <Typography variant="h1" fontSize={50} marginBottom={3}>
+            {location.name}
+          </Typography>
+          <Typography variant="h4">
+            Dimension:{` ${location.dimension}`}
+          </Typography>
+        </Box>
         <Button
           sx={{ alignSelf: 'flex-start' }}
           variant="contained"
@@ -41,27 +45,15 @@ export const LocationComponent: React.FunctionComponent<Props> = (props) => {
       </Box>
 
       <Box display={'flex'} gap={3} justifyContent={'start'}>
-        <Card sx={{ flexBasis: '33%', maxWidth: '600px' }}>
-          <CardContent>
-            <Typography variant="h6" mb={1}>
-              {location.name}
-            </Typography>
-            <Box display={'flex'} alignItems={'center'} gap={1}>
-
-              <Typography variant="body2">
-                Air Date:{` ${location.dimension}`}
-              </Typography>
-            </Box>
-          </CardContent>
-        </Card>
-
-        {location.residents && (
-          <Card sx={{ flexBasis: '33%', maxWidth: '600px' }}>
+        {location.residents.length <= 0 ? (
+          <Typography variant="h6">There are no characters in this location</Typography>
+        ) : (
+          <Card sx={{ flexBasis: '50%', maxWidth: '800px' }}>
             <CardHeader title="Characters appearing in this location" />
             <CardContent sx={{ overflowY: 'auto', maxHeight: '450px' }}>
               <Table>
                 <TableBody>
-                  <LookUpSelector initialList={location.residents} path={'character'} />
+                  <CharacterLookup initialList={location.residents} />
                 </TableBody>
               </Table>
             </CardContent>
@@ -71,5 +63,3 @@ export const LocationComponent: React.FunctionComponent<Props> = (props) => {
     </Box>
   );
 };
-
-

@@ -1,8 +1,9 @@
 import Axios, { AxiosError } from 'axios';
-import { ENDPOINTS_DEF, baseUrl } from './api-collection.hook';
-import { ApiResponse } from './api-collection.hook';
+import { baseUrl } from '../api-collection.hook';
+import { ENDPOINTS_DEF } from 'core/env';
+import { ApiResponse } from '../api-collection.hook';
 
-const isNotFoundError = (error: AxiosError): boolean => {
+export const isNotFoundError = (error: AxiosError): boolean => {
   const errorCode = error.response.status;
   return errorCode === 404;
 };
@@ -25,6 +26,5 @@ export const getCollection = async <AM>(
     throw error;
   }
 };
-
 
 

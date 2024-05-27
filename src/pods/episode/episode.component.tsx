@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { LookUpSelector } from 'pods/lookup-selector/lookup-selector';
+import { CharacterLookup } from 'pods/character-lookup/character-lookup';
 
 interface Props {
   episode: Episode;
@@ -75,13 +75,15 @@ export const EpisodeComponent: React.FunctionComponent<Props> = (props) => {
           </CardContent>
         </Card>
 
-        {episode.episode && (
+        {episode.episode.length <= 0 ? (
+          <Typography variant="h6">There are no characters in this episode</Typography>
+        ) : (
           <Card sx={{ flexBasis: '33%', maxWidth: '600px' }}>
             <CardHeader title="Characters appearing in this episode" />
             <CardContent sx={{ overflowY: 'auto', maxHeight: '450px' }}>
               <Table>
                 <TableBody>
-                  <LookUpSelector initialList={episode.characters} path={'character'} />
+                  <CharacterLookup initialList={episode.characters} />
                 </TableBody>
               </Table>
             </CardContent>

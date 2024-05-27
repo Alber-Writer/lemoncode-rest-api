@@ -2,9 +2,6 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import Button from '@mui/material/Button';
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
-import { TextFieldComponent } from 'common/components';
-import { Lookup } from 'common/models';
-import { formValidation } from './character.validations';
 import { Character } from './character.vm';
 import {
   Box,
@@ -12,7 +9,6 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
-  Link,
   Table,
   TableBody,
   TableCell,
@@ -20,6 +16,11 @@ import {
   Typography,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { EpisodeLookup } from 'pods/episode-lookup';
+import { Link } from 'react-router-dom';
+import { extractIDFromPath } from 'common/business';
+import { linkRoutes } from 'core/router';
+import { CONSTANTS, ENDPOINTS_DEF } from 'core/env';
 
 interface Props {
   character: Character;
@@ -29,7 +30,9 @@ interface Props {
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character } = props;
   const navigate = useNavigate();
-
+  const locationLink = extractIDFromPath(CONSTANTS.API_BASE_URL + ENDPOINTS_DEF.LOCATION);
+  const originUrl = locationLink(character.origin.url) ?? '#';
+  const locationUrl = locationLink(character.location.url) ?? '#';
 
   return (
     <Box>
@@ -75,11 +78,12 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
                 </TableRow>
                 <TableRow>
                   <TableCell>Origin</TableCell>
-                  <TableCell>{character.origin.name}</TableCell>
+                  <TableCell><Link to={linkRoutes.viewLocation(`${originUrl}`)}>{character.origin.name}</Link></TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Last known Location</TableCell>
-                  <TableCell>{character.location.name}</TableCell>
+                  <TableCell>
+                  <Link to={linkRoutes.viewLocation(`${locationUrl}`)}>{character.location.name}</Link></TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -92,13 +96,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             <CardContent sx={{ overflowY: 'auto', maxHeight: '450px' }}>
               <Table>
                 <TableBody>
-                  {character.episode.map((e) => (
-                    <TableRow key={e}>
-                      <TableCell>
-                        <Link href={e}>{e}</Link>
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                <EpisodeLookup initialList={character.episode}/>
                 </TableBody>
               </Table>
             </CardContent>

@@ -45,7 +45,6 @@ export const SearchCharacter = () => {
         onSubmit={(values: typeof searchValues, { setSubmitting }) => {
           const query = Object.keys(values).reduce((acc, currentKey, i) => {
             if (values[currentKey]) {
-              console.log(`${currentKey}=${values[currentKey]}`);
               return [...acc, `${currentKey}=${values[currentKey]}`];
             }
             return acc;

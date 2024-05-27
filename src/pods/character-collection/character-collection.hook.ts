@@ -1,5 +1,5 @@
 import { mapFromApiToVm } from './character-collection.mapper';
-import { useApiCollection } from 'core/api/api-collection.hook';
+import { useGeneralApiCollection } from 'core/api/api-collection.hook';
 
 export const useCharacterCollection = () => {
   const {
@@ -8,7 +8,7 @@ export const useCharacterCollection = () => {
     pageInfo,
     errorMessage,
     errorHandler
-  } = useApiCollection({
+  } = useGeneralApiCollection({
     mapFromApiToVm: mapFromApiToVm,
     escapeErrorLink: 'characterCollection',
     endPoint: 'CHARACTER',
