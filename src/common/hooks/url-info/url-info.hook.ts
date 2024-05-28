@@ -19,7 +19,6 @@ export const useURLInfo = () => {
     url.delete('page');
     return url.toString()
   };
-  // TODO: check url info... to avoid undesired characters
 
   return {
     path,

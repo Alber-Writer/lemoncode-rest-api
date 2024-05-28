@@ -14,10 +14,10 @@ import {
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { CharacterLookup } from 'pods/character-lookup/character-lookup';
+import { ReturnButton } from 'common/components';
 
 interface Props {
   episode: Episode;
-  onSave: (episode: Episode) => void;
 }
 
 export const EpisodeComponent: React.FunctionComponent<Props> = (props) => {
@@ -46,14 +46,7 @@ export const EpisodeComponent: React.FunctionComponent<Props> = (props) => {
           {episode.name}
         </Typography>
 
-        <Button
-          sx={{ alignSelf: 'flex-start' }}
-          variant="contained"
-          onClick={() => navigate(-1)}
-        >
-          <KeyboardReturnIcon />
-          <Box margin={'5px'}>Return</Box>
-        </Button>
+        <ReturnButton/>
       </Box>
 
       <Box display={'flex'} gap={3} justifyContent={'start'}>

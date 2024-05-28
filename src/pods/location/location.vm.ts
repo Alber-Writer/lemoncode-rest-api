@@ -1,5 +1,14 @@
-import { Location as ImportedLocationType } from 'common/interfaces/rick-and-morty.api.types';
-export interface Location extends ImportedLocationType {}
+interface ResourceBase {
+  id: number
+  name: string
+  url: string
+  created: string
+}
+export interface Location extends ResourceBase {
+  type: string
+  dimension: string
+  residents: string[]
+}
 
 export const createEmptyLocation = (): Location => ({
   id: 0,

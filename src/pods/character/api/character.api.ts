@@ -16,10 +16,6 @@ export const getCharacter = async (id: number = 1): Promise<Character> => {
   }
 };
 
-export const saveCharacter = async (character: Character): Promise<boolean> => {
-  return true;
-};
-
 const isNotFoundError = (error: AxiosError): boolean => {
   const errorCode = error.response.status;
   return errorCode === 404;

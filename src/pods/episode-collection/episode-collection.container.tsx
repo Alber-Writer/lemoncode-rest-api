@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, Typography } from '@mui/material';
 
 import { linkRoutes } from 'core/router';
 import { useEpisodesCollection } from './episode-collection.hook';
@@ -47,7 +47,7 @@ export const EpisodeCollectionContainer = () => {
       )}
 
       {!episodesCollection.length && !apiErrorMessage ? (
-        'Loading...'
+        <CircularProgress />
       ) : (
         <EpisodeCollectionComponent
           episodeCollection={episodesCollection}

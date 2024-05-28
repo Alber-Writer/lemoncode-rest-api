@@ -16,10 +16,6 @@ export const getEpisode = async (id: number = 1): Promise<Episode> => {
   }
 };
 
-export const saveEpisode = async (episode: Episode): Promise<boolean> => {
-  return true;
-};
-
 const isNotFoundError = (error: AxiosError): boolean => {
   const errorCode = error.response.status;
   return errorCode === 404;

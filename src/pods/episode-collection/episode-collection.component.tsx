@@ -8,7 +8,7 @@ interface Props {
   onView: (id: number) => void;
 }
 
-export const EpisodeCollectionComponent: React.FunctionComponent<Props> = (
+export const EpisodeCollectionComponent: React.FC<Props> = (
   props
 ) => {
   const { episodeCollection, onView } = props;

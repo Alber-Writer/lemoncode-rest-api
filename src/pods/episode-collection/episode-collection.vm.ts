@@ -1,5 +1,9 @@
-import {Episode} from "common/interfaces/rick-and-morty.api.types"
-
-export interface EpisodeEntityVm extends Episode{}
-
-
+export interface EpisodeEntityVm {
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+  characters: string[];
+  url: string;
+  created: string;
+}

@@ -16,10 +16,6 @@ export const getLocation = async (id: number = 1): Promise<Location> => {
   }
 };
 
-export const saveLocation = async (location: Location): Promise<boolean> => {
-  return true;
-};
-
 const isNotFoundError = (error: AxiosError): boolean => {
   const errorCode = error.response.status;
   return errorCode === 404;

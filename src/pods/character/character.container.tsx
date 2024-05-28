@@ -2,20 +2,26 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import * as api from './api';
 import { createEmptyCharacter, Character } from './character.vm';
-import { mapCharacterFromApiToVm, mapCharacterFromVmToApi } from './character.mappers';
+import {
+  mapCharacterFromApiToVm,
+} from './character.mappers';
 import { CharacterComponent } from './character.component';
+import { Box, Typography } from '@mui/material';
+import { ReturnButton } from '../../common/components/return-button/return-button';
 
-export const CharacterContainer: React.FunctionComponent = (props) => {
-  const [character, setCharacter] = React.useState<Character>(createEmptyCharacter());
+export const CharacterContainer: React.FunctionComponent = () => {
+  const [character, setCharacter] = React.useState<Character>(
+    createEmptyCharacter()
+  );
+  const [errorMessage, setErrorMessage] = React.useState<string>('');
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
 
   const handleLoadCharacter = async () => {
-    try{
+    try {
       const apiCharacter = await api.getCharacter(parseInt(id));
       setCharacter(mapCharacterFromApiToVm(apiCharacter));
-    }catch(error){
-      alert('Character not found')
+    } catch (error) {
+      setErrorMessage('Character not found');
     }
   };
 
@@ -25,14 +31,18 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     }
   }, []);
 
-  const handleSave = async (character: Character) => {
-    const apiCharacter = mapCharacterFromVmToApi(character);
-    const success = await api.saveCharacter(apiCharacter);
-    if (success) {
-      navigate(-1);
-    } else {
-      alert('Error on save character');
-    }
-  };
-  return <CharacterComponent character={character} onSave={handleSave} />;
+  return (
+    <>
+      {errorMessage ? (
+        <Box gap={5} display={'flex'} justifyContent={'space-evenly'}>
+          <Typography variant="h4" color={'crimson'}>
+            {errorMessage}
+          </Typography>
+          <ReturnButton />
+        </Box>
+      ) : (
+        <CharacterComponent character={character}/>
+      )}
+    </>
+  );
 };

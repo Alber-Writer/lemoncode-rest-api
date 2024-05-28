@@ -1,5 +1,14 @@
-import { Episode as ImportedEpisodeType } from 'common/interfaces/rick-and-morty.api.types';
-export interface Episode extends ImportedEpisodeType {}
+interface ResourceBase {
+  id: number;
+  name: string;
+  url: string;
+  created: string;
+}
+export interface Episode extends ResourceBase {
+  air_date: string;
+  episode: string;
+  characters: string[];
+}
 
 export const createEmptyEpisode = (): Episode => ({
   id: 0,

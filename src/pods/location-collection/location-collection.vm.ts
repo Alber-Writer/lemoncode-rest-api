@@ -1,5 +1,11 @@
-import {Location} from "common/interfaces/rick-and-morty.api.types"
-
-export interface LocationEntityVm extends Location{}
-
-
+interface ResourceBase {
+  id: number
+  name: string
+  url: string
+  created: string
+}
+export interface LocationEntityVm extends ResourceBase {
+  type: string
+  dimension: string
+  residents: string[]
+}

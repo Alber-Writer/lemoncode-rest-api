@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { mapToCollection } from 'common/mappers';
 import { useNavigate } from 'react-router-dom';
-import { LinkRoutes } from 'core/router';
+import { LinkRoutes, switchRoutes } from 'core/router';
 
 import { CONSTANTS, ENDPOINTS_DEF } from 'core/env';
 import { getCollection } from './api/get-general-collection';
@@ -42,7 +42,7 @@ export const useGeneralApiCollection = <AM, VM>(config: {
 
     const nextStep = () => {
       removeErrorMessage();
-      const visitPage = navigate(escapeErrorLink);
+      const visitPage = navigate(switchRoutes[escapeErrorLink]);
       return { visitPage };
     };
 

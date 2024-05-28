@@ -11,17 +11,15 @@ import {
   TableBody,
   Typography,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import { CharacterLookup } from 'pods/character-lookup/character-lookup';
+import { ReturnButton } from 'common/components';
 
 interface Props {
   location: Location;
-  onSave: (location: Location) => void;
 }
 
 export const LocationComponent: React.FunctionComponent<Props> = (props) => {
   const { location } = props;
-  const navigate = useNavigate();
 
   return (
     <Box>
@@ -34,14 +32,7 @@ export const LocationComponent: React.FunctionComponent<Props> = (props) => {
             Dimension:{` ${location.dimension}`}
           </Typography>
         </Box>
-        <Button
-          sx={{ alignSelf: 'flex-start' }}
-          variant="contained"
-          onClick={() => navigate(-1)}
-        >
-          <KeyboardReturnIcon />
-          <Box margin={'5px'}>Return</Box>
-        </Button>
+        <ReturnButton/>
       </Box>
 
       <Box display={'flex'} gap={3} justifyContent={'start'}>
