@@ -1,10 +1,9 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import * as api from './api';
 import { createEmptyEpisode, Episode } from './episode.vm';
 import {
   mapEpisodeFromApiToVm,
-  mapEpisodeFromVmToApi,
 } from './episode.mappers';
 import { EpisodeComponent } from './episode.component';
 import { CircularProgress } from '@mui/material';

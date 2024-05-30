@@ -19,7 +19,7 @@ export const EpisodeLookup:React.FC<Props> = ({ initialList }:Props) => {
   const [collection, setCollection] = React.useState(initialList)
   React.useEffect(()=>{
     setCollection(initialList)
-  }, [])
+  }, [initialList])
   return (
     <>
       {collection.map((episode) => (

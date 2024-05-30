@@ -4,11 +4,20 @@ interface ResourceBase {
   url: string;
   created: string;
 }
+export interface CharactersLookUp{
+  id:string;
+  image:string;
+  name:string;
+  status:string;
+  species: string;
+}
 export interface Episode extends ResourceBase {
   air_date: string;
   episode: string;
-  characters: string[];
+  characters: CharactersLookUp[];
 }
+
+
 
 export const createEmptyEpisode = (): Episode => ({
   id: 0,
@@ -17,5 +26,11 @@ export const createEmptyEpisode = (): Episode => ({
   created: '',
   air_date: '',
   episode: '',
-  characters: [''],
+  characters: [{
+    id:'',
+    image:'',
+    name:'',
+    status:'',
+    species:'',
+  }],
 });

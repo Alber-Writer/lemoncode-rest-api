@@ -1,6 +1,4 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import { Episode } from './episode.vm';
 import {
   Box,
@@ -12,7 +10,6 @@ import {
   TableBody,
   Typography,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import { CharacterLookup } from 'pods/character-lookup/character-lookup';
 import { ReturnButton } from 'common/components';
 
@@ -22,7 +19,6 @@ interface Props {
 
 export const EpisodeComponent: React.FunctionComponent<Props> = (props) => {
   const { episode } = props;
-  const navigate = useNavigate();
 
   const chipColours = {
     S01: 'secondary',
@@ -46,7 +42,7 @@ export const EpisodeComponent: React.FunctionComponent<Props> = (props) => {
           {episode.name}
         </Typography>
 
-        <ReturnButton/>
+        <ReturnButton />
       </Box>
 
       <Box display={'flex'} gap={3} justifyContent={'start'}>
@@ -69,7 +65,9 @@ export const EpisodeComponent: React.FunctionComponent<Props> = (props) => {
         </Card>
 
         {episode.episode.length <= 0 ? (
-          <Typography variant="h6">There are no characters in this episode</Typography>
+          <Typography variant="h6">
+            There are no characters in this episode
+          </Typography>
         ) : (
           <Card sx={{ flexBasis: '33%', maxWidth: '600px' }}>
             <CardHeader title="Characters appearing in this episode" />
@@ -86,5 +84,3 @@ export const EpisodeComponent: React.FunctionComponent<Props> = (props) => {
     </Box>
   );
 };
-
-

@@ -1,22 +1,28 @@
 import { Episode } from './episode.api-model';
-import Axios, { AxiosError } from 'axios';
 import { CONSTANTS } from 'core/env';
+import { graphQLClient } from 'core/api';
+import { gql } from 'graphql-request';
 
-const baseUrl = CONSTANTS.API_BASE_URL + 'episode';
+interface GetEpisodeResponse{
+  episode:Episode
+}
+
 export const getEpisode = async (id: number = 1): Promise<Episode> => {
-  try{
-    const {data} = await Axios.get(`${baseUrl}/${id}`);
-    return data
-  }catch(error){
-    if(isNotFoundError(error)){
-      console.log('Not found')
-      throw undefined;
+  const query = gql`
+  query{
+    episode(id:"${id}"){
+      name
+      episode
+      air_date
+      characters{id,image,name,status,species}
     }
-    throw error
   }
-};
-
-const isNotFoundError = (error: AxiosError): boolean => {
-  const errorCode = error.response.status;
-  return errorCode === 404;
+  `;
+  try {
+    const { episode } = await graphQLClient.request<GetEpisodeResponse>(query);
+    return episode;
+  } catch (error) {
+      console.log('Not found');
+      throw undefined;
+  }
 };
