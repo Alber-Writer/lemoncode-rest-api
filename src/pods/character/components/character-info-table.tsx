@@ -1,9 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { extractIDFromPath } from 'common/business';
 import { linkRoutes } from 'core/router';
-import { CONSTANTS, ENDPOINTS_DEF } from 'core/env';
 import { Character } from '../character.vm';
 
 export interface CharacterInfoTableProps {
@@ -13,11 +11,8 @@ export interface CharacterInfoTableProps {
 export const CharacterInfoTable: React.FC<CharacterInfoTableProps> = ({
   character,
 }: CharacterInfoTableProps) => {
-  const locationLink = extractIDFromPath(
-    CONSTANTS.API_BASE_URL + ENDPOINTS_DEF.LOCATION
-  );
-  const originUrl = locationLink(character.origin.url) ?? '#';
-  const locationUrl = locationLink(character.location.url) ?? '#';
+  const originUrl = character.origin.id ?? '#';
+  const locationUrl = character.location.id ?? '#';
   return (
     <Table sx={{ minWidth: 280 }} aria-label="simple table">
       <TableBody>

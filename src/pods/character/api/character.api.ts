@@ -1,22 +1,31 @@
 import { Character } from './character.api-model';
-import Axios, { AxiosError } from 'axios';
-import { CONSTANTS } from 'core/env';
-
-const baseUrl = CONSTANTS.API_BASE_URL + 'character';
+import { graphQLClient } from 'core/api';
+import { gql } from 'graphql-request';
+interface GetCharacterResponse {
+  character: Character;
+}
 export const getCharacter = async (id: number = 1): Promise<Character> => {
-  try{
-    const {data} = await Axios.get(`${baseUrl}/${id}`);
-    return data
-  }catch(error){
-    if(isNotFoundError(error)){
-      console.log('Not found')
-      throw undefined;
-    }
-    throw error
+  const query = gql`
+  query {
+  character(id:"${id}"){
+    name
+    image
+    status
+    species
+    gender
+    origin{name, id}
+    location{name, id}
+    episode{id,name,episode}
   }
-};
+  }
+  `;
+  try {
+    const { character } = await graphQLClient.request<GetCharacterResponse>(
+      query
+    );
+    return character;
+  } catch (error) {
+    console.log('Not found')
 
-const isNotFoundError = (error: AxiosError): boolean => {
-  const errorCode = error.response.status;
-  return errorCode === 404;
+  }
 };

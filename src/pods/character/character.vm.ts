@@ -1,22 +1,27 @@
 interface ResourceBase {
-  id: number
-  name: string
-  url: string
-  created: string
+  id: number;
+  name: string;
+  url: string;
+  created: string;
 }
 interface CharacterLocation {
-  name: string
-  url: string
+  name: string;
+  id: string;
+}
+export interface EpisodeLookUp {
+  id: string;
+  name: string;
+  episode: string;
 }
 export interface Character extends ResourceBase {
-  status: 'Dead' | 'Alive' | 'unknown'
-  species: string
-  type: string
-  gender: 'Female' | 'Male' | 'Genderless' | 'unknown'
-  origin: CharacterLocation
-  location: CharacterLocation
-  image: string
-  episode: string[]
+  status: 'Dead' | 'Alive' | 'unknown';
+  species: string;
+  type: string;
+  gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
+  origin: CharacterLocation;
+  location: CharacterLocation;
+  image: string;
+  episode: EpisodeLookUp[];
 }
 
 export const createEmptyCharacter = (): Character => ({
@@ -28,18 +33,14 @@ export const createEmptyCharacter = (): Character => ({
   gender: 'unknown',
   origin: {
     name: '',
-    url: '',
+    id: '',
   },
   location: {
     name: '',
-    url: '',
+    id: '',
   },
   image: '',
-  episode: [
-    '',
-  ],
+  episode: [{ episode: '', id: '', name: '' }],
   url: '',
   created: '',
 });
-
-

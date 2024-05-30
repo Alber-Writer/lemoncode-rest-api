@@ -9,29 +9,17 @@ import {
 import { Link } from 'react-router-dom';
 import { linkRoutes } from 'core/router';
 
-import { extractIDFromPath } from 'common/business/extract-id-from-path';
-import { useApiSpecificCollection } from 'core/api/api-specific-collection.hook';
-import { mapEpisodeFromApiToVm } from 'pods/episode/episode.mappers';
-import { ENDPOINTS_DEF } from 'core/env';
+import { EpisodeLookUp } from 'pods/character/character.vm';
 
 interface Props{
-  initialList:string[],
+  initialList:EpisodeLookUp[],
 }
 
 export const EpisodeLookup:React.FC<Props> = ({ initialList }:Props) => {
-  const { collection, loadCollection } = useApiSpecificCollection({
-    mapFromApiToVm: mapEpisodeFromApiToVm,
-    endPoint: 'EPISODE',
-  });
-  const extractCharacterList = extractIDFromPath(ENDPOINTS_DEF.EPISODE);
-  React.useEffect(() => {
-    const specificList = initialList.reduce(
-      (acc:string[], currentKey:string) => [...acc, extractCharacterList(currentKey)],
-      []
-    );
-    loadCollection(specificList.join(','));
-  }, [initialList]);
-
+  const [collection, setCollection] = React.useState(initialList)
+  React.useEffect(()=>{
+    setCollection(initialList)
+  }, [])
   return (
     <>
       {collection.map((episode) => (
