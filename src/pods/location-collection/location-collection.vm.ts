@@ -4,8 +4,7 @@ interface ResourceBase {
   url: string
   created: string
 }
-export interface LocationEntityVm extends ResourceBase {
+export interface LocationEntityVm extends Pick<ResourceBase, 'id' | 'name'> {
   type: string
   dimension: string
-  residents: string[]
 }

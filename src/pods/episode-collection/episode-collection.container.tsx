@@ -20,7 +20,7 @@ export const EpisodeCollectionContainer = () => {
 
   const { path, urlSearchPageNum, getSearchFilters } = useURLInfo();
   React.useEffect(() => {
-    loadEpisodesCollection(urlSearchPageNum, getSearchFilters());
+    loadEpisodesCollection(urlSearchPageNum);
   }, [path]);
 
   const handleVisit = (id: number) => {

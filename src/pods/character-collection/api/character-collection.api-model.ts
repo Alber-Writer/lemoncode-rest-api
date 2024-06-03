@@ -1,6 +1,10 @@
-import { Character, Info } from 'common/interfaces/rick-and-morty.api.types';
+import { Character, Info, Location } from 'common/interfaces/rick-and-morty.api.types';
 
-export interface CharacterEntityApi extends Character {}
+
+interface Origin extends Pick<Location, 'name'>{};
+export interface CharacterEntityApi extends Pick<Character, 'id' | 'name' | 'image' | 'species' | 'status'> {
+  origin:Origin
+}
 
 export interface CharacterPagination {
   count: number;
@@ -13,3 +17,4 @@ export interface CharacterApiResponse {
   info: CharacterPagination;
   results: CharacterEntityApi[];
 }
+

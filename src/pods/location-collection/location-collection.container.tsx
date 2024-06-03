@@ -18,9 +18,9 @@ export const LocationCollectionContainer = () => {
   } = useLocationsCollection();
   const navigate = useNavigate();
 
-  const { path, urlSearchPageNum, getSearchFilters } = useURLInfo();
+  const { path, urlSearchPageNum } = useURLInfo();
   React.useEffect(() => {
-    loadLocationsCollection(urlSearchPageNum, getSearchFilters());
+    loadLocationsCollection(urlSearchPageNum);
   }, [path]);
 
   const handleVisit = (id: number) => {
@@ -58,7 +58,6 @@ export const LocationCollectionContainer = () => {
       <div>
         {pageInfo && pageInfo.pages > 1 && (
           <Pagination
-            searchFilters={getSearchFilters()}
             pagesQty={pageInfo.pages}
             nextPage={pageInfo.next}
             prevPage={pageInfo.prev}

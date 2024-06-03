@@ -11,5 +11,5 @@ export interface EpisodePagination {
 
 export interface EpisodeApiResponse {
   info: EpisodePagination;
-  results: EpisodeEntityApi[];
+  results: Omit<EpisodeEntityApi, 'characters' | 'created' | 'url'>[];
 }

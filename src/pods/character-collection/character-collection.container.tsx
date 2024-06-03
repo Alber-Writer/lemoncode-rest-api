@@ -18,9 +18,9 @@ export const CharacterCollectionContainer = () => {
   } = useCharacterCollection();
   const navigate = useNavigate();
 
-  const { path, urlSearchPageNum, getSearchFilters } = useURLInfo();
+  const { path, urlSearchPageNum, getSearchFiltersObject, getSearchFilters } = useURLInfo();
   React.useEffect(() => {
-    loadCharacterCollection(urlSearchPageNum, getSearchFilters());
+    loadCharacterCollection(urlSearchPageNum, getSearchFiltersObject());
   }, [path]);
 
   const handleVisit = (id: number) => {

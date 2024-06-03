@@ -1,6 +1,6 @@
 import { Location } from 'common/interfaces/rick-and-morty.api.types';
 
-export interface LocationEntityApi extends Location {}
+export interface LocationEntityApi extends Omit<Location, 'created' | 'residents' | 'url'> {}
 
 export interface LocationPagination {
   count: number;

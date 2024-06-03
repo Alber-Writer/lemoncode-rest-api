@@ -1,37 +1,44 @@
-import Axios, { AxiosError } from 'axios';
-import {
-  CharacterApiResponse,
-} from './character-collection.api-model';
-import { mockCharacterCollection } from './character-collection.mock-data';
-import { CONSTANTS } from 'core/env';
+import { CharacterApiResponse } from './character-collection.api-model';
+import { gql } from 'graphql-request';
+import { graphQLClient } from 'core/api';
+import { plainObjToGraphqlString } from 'common/business/obj-to-graphql-string';
 
-let characterCollection = [...mockCharacterCollection];
-const characterUrl = CONSTANTS.API_BASE_URL + 'character';
+interface getCharacterCollectionResponse {
+  characters: CharacterApiResponse;
+}
 
-export const getCharacterCollection = async (
+      export const getCharacterCollection = async (
   pageNumber: number = 1,
-  searchParams: string = ''
-): Promise<CharacterApiResponse> => {
-  try {
-    const { data } = await Axios.get(
-      `${characterUrl}/?page=${pageNumber}${searchParams ? `&${searchParams}` : ''}`
-    );
-    return data;
-  } catch (error) {
-    if (isNotFoundError(error)) {
-      console.log('Not found');
-      throw undefined;
+  searchParams: Partial<CharacterApiResponse>
+): Promise<getCharacterCollectionResponse> => {
+  const searchParamsCheck = `{${plainObjToGraphqlString(searchParams)}}`;
+  const query = gql`
+  query{
+    characters(page:${pageNumber}, filter:${searchParamsCheck}){
+      info{
+        count
+        pages
+        next
+        prev
+      }
+      results{
+        id
+        name
+        image
+        species
+        status
+        origin{
+          name
+        }
+      }
     }
-    throw error;
+  }`;
+  try {
+    const { characters } =
+      await graphQLClient.request<getCharacterCollectionResponse>(query);
+    return { characters };
+  } catch (error) {
+    console.log('Not found');
+    throw undefined;
   }
-};
-
-export const deleteCharacter = async (id: number): Promise<boolean> => {
-  characterCollection = characterCollection.filter((h) => h.id !== id);
-  return true;
-};
-
-const isNotFoundError = (error: AxiosError): boolean => {
-  const errorCode = error.response.status;
-  return errorCode === 404;
 };

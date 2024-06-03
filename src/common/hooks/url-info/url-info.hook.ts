@@ -17,13 +17,20 @@ export const useURLInfo = () => {
   const getSearchFilters = () => {
     const url = new URLSearchParams(path.search);
     url.delete('page');
-    return url.toString()
+    return url.toString();
+  };
+
+  const getSearchFiltersObject = () => {
+    const url = new URLSearchParams(path.search);
+    url.delete('page');
+    return Object.fromEntries(url)
   };
 
   return {
     path,
     urlSearchPageNum,
     getSearchQueryParam,
-    getSearchFilters
+    getSearchFilters,
+    getSearchFiltersObject,
   };
 };

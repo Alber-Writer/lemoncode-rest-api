@@ -1,30 +1,40 @@
-import Axios, { AxiosError } from 'axios';
-import {
-  LocationApiResponse,
-} from './location-collection.api-model';
-import { CONSTANTS } from 'core/env';
+import { gql } from 'graphql-request';
 
-const locationUrl = CONSTANTS.API_BASE_URL + 'location';
+import { graphQLClient } from 'core/api';
+import { LocationApiResponse } from './location-collection.api-model';
+
+
+interface getLocationCollectionResponse {
+  locations: LocationApiResponse;
+}
 
 export const getLocationCollection = async (
   pageNumber: number = 1,
-  searchParams: string = ''
 ): Promise<LocationApiResponse> => {
-  try {
-    const { data } = await Axios.get(
-      `${locationUrl}/?page=${pageNumber}${searchParams ? `&${searchParams}` : ''}`
-    );
-    return data;
-  } catch (error) {
-    if (isNotFoundError(error)) {
-      console.log('Not found');
-      throw undefined;
+  const query = gql`
+query {
+  locations(page:${pageNumber}){
+    info{
+      count
+      pages
+      next
+      prev
     }
-    throw error;
+    results{
+      id
+      name
+			type
+      dimension
+    }
   }
-};
-
-const isNotFoundError = (error: AxiosError): boolean => {
-  const errorCode = error.response.status;
-  return errorCode === 404;
+}
+  `
+  try {
+    const { locations } =
+      await graphQLClient.request<getLocationCollectionResponse>(query);
+    return locations;
+  } catch (error) {
+    console.log('Not found');
+    throw undefined;
+  }
 };

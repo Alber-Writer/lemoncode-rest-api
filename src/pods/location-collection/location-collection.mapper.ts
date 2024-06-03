@@ -6,9 +6,6 @@ export const mapFromApiToVm = (
 ): viewModel.LocationEntityVm => ({
   id: location.id,
   name: location.name,
-  url: location.url,
-  created: location.created,
   type: location.type,
   dimension: location.dimension,
-  residents: location.residents
 });
