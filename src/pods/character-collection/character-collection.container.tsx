@@ -44,7 +44,6 @@ export const CharacterCollectionContainer = () => {
           </Box>
         </>
       )}
-
       {!characterCollection.length && !apiErrorMessage ? (
         <CircularProgress />
       ) : (

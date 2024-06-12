@@ -1,6 +1,8 @@
-import { Character, Info } from 'common/interfaces/rick-and-morty.api.types';
+import { Character } from 'common/interfaces/rick-and-morty.api.types';
 
-export interface CharacterEntityApi extends Character {}
+export interface CharacterEntityApi extends Character {
+  bestSentences:string[]
+}
 
 export interface CharacterPagination {
   count: number;

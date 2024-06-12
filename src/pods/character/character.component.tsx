@@ -1,17 +1,11 @@
 import React from 'react';
-import { Formik, Form } from 'formik';
 import { Character } from './character.vm';
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-} from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { EpisodeLookup } from 'pods/episode-lookup';
 import { CharacterInfoTable } from './components/character-info-table';
 import { EpisodesContainer } from './components/episodes-container';
 import { ReturnButton } from '../../common/components/return-button/return-button';
+import { BestSentences } from './components/best-sentences';
 
 interface Props {
   character: Character;
@@ -45,6 +39,8 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             <EpisodeLookup initialList={character.episode} />
           </EpisodesContainer>
         )}
+
+        <BestSentences bestSentences={character.bestSentences} characterId={character.id} />
       </Box>
     </Box>
   );

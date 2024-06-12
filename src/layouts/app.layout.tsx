@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import * as classes from './app.layout.styles';
 import { Nav } from 'common/components';
+import { Typography } from '@mui/material';
 
 interface Props {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ export const AppLayout: React.FC<Props> = (props) => {
           <IconButton color="inherit" aria-label="Menu">
             <AccountCircle />
           </IconButton>
+          <Typography>Lab with 'Character Best Sentences' Feature</Typography>
           <Nav></Nav>
         </Toolbar>
       </AppBar>

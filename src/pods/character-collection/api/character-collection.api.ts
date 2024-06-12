@@ -1,17 +1,15 @@
 import Axios, { AxiosError } from 'axios';
 import {
-  CharacterApiResponse,
+  CharacterApiResponse, CharacterEntityApi,
 } from './character-collection.api-model';
-import { mockCharacterCollection } from './character-collection.mock-data';
-import { CONSTANTS } from 'core/env';
+import { CONSTANTS, ENDPOINTS_DEF } from 'core/env';
 
-let characterCollection = [...mockCharacterCollection];
-const characterUrl = CONSTANTS.API_BASE_URL + 'character';
+const characterUrl = CONSTANTS.LOCAL_API_BASE_URL + ENDPOINTS_DEF.CHARACTER;
 
 export const getCharacterCollection = async (
   pageNumber: number = 1,
   searchParams: string = ''
-): Promise<CharacterApiResponse> => {
+): Promise<CharacterEntityApi[]> => {
   try {
     const { data } = await Axios.get(
       `${characterUrl}/?page=${pageNumber}${searchParams ? `&${searchParams}` : ''}`
@@ -24,11 +22,6 @@ export const getCharacterCollection = async (
     }
     throw error;
   }
-};
-
-export const deleteCharacter = async (id: number): Promise<boolean> => {
-  characterCollection = characterCollection.filter((h) => h.id !== id);
-  return true;
 };
 
 const isNotFoundError = (error: AxiosError): boolean => {

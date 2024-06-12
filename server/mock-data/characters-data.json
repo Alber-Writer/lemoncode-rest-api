@@ -1,396 +1,698 @@
 {
-  "cities": [
+  "character": [
     {
-      "id": "Seattle",
-      "name": "Seattle"
-    },
-    {
-      "id": "Chicago",
-      "name": "Chicago"
-    },
-    {
-      "id": "New York",
-      "name": "New York"
-    },
-    {
-      "id": "California",
-      "name": "California"
-    },
-    {
-      "id": "Burlingame",
-      "name": "Burlingame"
-    }
-  ],
-  "characters": [
-    {
-      "id": "1",
-      "type": "character",
-      "name": "Motif Seattle",
-      "created": 1464777092568,
-      "modified": 1464777618676,
-      "address1": "1415 5th Ave",
-      "airportCode": "SEA",
-      "amenityMask": 7798786,
-      "city": "Seattle",
-      "confidenceRating": 52,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/125727/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 289,
-      "hotelId": 1257278,
-      "hotelInDestination": true,
-      "hotelRating": 4,
+      "id": 1,
+      "bestSentences": [
+        "I Don't Care. I Ain't Rinsing.",
+        "Weddings Are Basically Funerals With Cake.",
+        "You Still Have A Right To Take Anything You Want Seriously.",
+        "To Live Is To Risk It All.",
+        "The Universe Is Basically An Animal.",
+        "Wubba Lubba Dub-Dub!"
+      ],
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "Earth (C-137)",
+        "url": "https://rickandmortyapi.com/api/location/1"
+      },
       "location": {
-        "latitude": 47.60985,
-        "longitude": -122.33475
+        "name": "Citadel of Ricks",
+        "url": "https://rickandmortyapi.com/api/location/3"
       },
-      "locationDescription": "Near Pike Place Market",
-      "lowRate": 259,
-      "metadata": {
-        "path": "/hotels/1"
-      },
-      "postalCode": 98101,
-      "propertyCategory": 1,
-      "proximityDistance": 11.168453,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at Motif Seattle, you will be centrally located in Seattle, steps from 5th Avenue Theater and minutes from Pike Place Market. This 4-star hotel is within",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/50947_264_t.jpg",
-      "tripAdvisorRating": 3.5,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/3.5-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/1",
+        "https://rickandmortyapi.com/api/episode/2",
+        "https://rickandmortyapi.com/api/episode/3",
+        "https://rickandmortyapi.com/api/episode/4",
+        "https://rickandmortyapi.com/api/episode/5",
+        "https://rickandmortyapi.com/api/episode/6",
+        "https://rickandmortyapi.com/api/episode/7",
+        "https://rickandmortyapi.com/api/episode/8",
+        "https://rickandmortyapi.com/api/episode/9",
+        "https://rickandmortyapi.com/api/episode/10",
+        "https://rickandmortyapi.com/api/episode/11",
+        "https://rickandmortyapi.com/api/episode/12",
+        "https://rickandmortyapi.com/api/episode/13",
+        "https://rickandmortyapi.com/api/episode/14",
+        "https://rickandmortyapi.com/api/episode/15",
+        "https://rickandmortyapi.com/api/episode/16",
+        "https://rickandmortyapi.com/api/episode/17",
+        "https://rickandmortyapi.com/api/episode/18",
+        "https://rickandmortyapi.com/api/episode/19",
+        "https://rickandmortyapi.com/api/episode/20",
+        "https://rickandmortyapi.com/api/episode/21",
+        "https://rickandmortyapi.com/api/episode/22",
+        "https://rickandmortyapi.com/api/episode/23",
+        "https://rickandmortyapi.com/api/episode/24",
+        "https://rickandmortyapi.com/api/episode/25",
+        "https://rickandmortyapi.com/api/episode/26",
+        "https://rickandmortyapi.com/api/episode/27",
+        "https://rickandmortyapi.com/api/episode/28",
+        "https://rickandmortyapi.com/api/episode/29",
+        "https://rickandmortyapi.com/api/episode/30",
+        "https://rickandmortyapi.com/api/episode/31",
+        "https://rickandmortyapi.com/api/episode/32",
+        "https://rickandmortyapi.com/api/episode/33",
+        "https://rickandmortyapi.com/api/episode/34",
+        "https://rickandmortyapi.com/api/episode/35",
+        "https://rickandmortyapi.com/api/episode/36",
+        "https://rickandmortyapi.com/api/episode/37",
+        "https://rickandmortyapi.com/api/episode/38",
+        "https://rickandmortyapi.com/api/episode/39",
+        "https://rickandmortyapi.com/api/episode/40",
+        "https://rickandmortyapi.com/api/episode/41",
+        "https://rickandmortyapi.com/api/episode/42",
+        "https://rickandmortyapi.com/api/episode/43",
+        "https://rickandmortyapi.com/api/episode/44",
+        "https://rickandmortyapi.com/api/episode/45",
+        "https://rickandmortyapi.com/api/episode/46",
+        "https://rickandmortyapi.com/api/episode/47",
+        "https://rickandmortyapi.com/api/episode/48",
+        "https://rickandmortyapi.com/api/episode/49",
+        "https://rickandmortyapi.com/api/episode/50",
+        "https://rickandmortyapi.com/api/episode/51"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/1",
+      "created": "2017-11-04T18:48:46.250Z"
     },
     {
-      "id": "2",
-      "type": "hotel",
-      "name": "The Westin Seattle",
-      "created": 1464777092593,
-      "modified": 1464871217352,
-      "address1": "1900 5th Ave",
-      "airportCode": "SEA",
-      "amenityMask": 7806977,
-      "city": "Seattle",
-      "confidenceRating": 5,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/164122/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 259,
-      "hotelId": 164122,
-      "hotelInDestination": true,
-      "hotelRating": 4,
+      "id": 2,
+      "bestSentences": [
+        "Probando..."
+      ],
+      "name": "Morty Smith",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
       "location": {
-        "latitude": 47.61309,
-        "longitude": -122.33788
+        "name": "Citadel of Ricks",
+        "url": "https://rickandmortyapi.com/api/location/3"
       },
-      "locationDescription": "Near Pike Place Market",
-      "lowRate": 209,
-      "metadata": {
-        "path": "/hotels/2"
-      },
-      "postalCode": 98101,
-      "propertyCategory": 1,
-      "proximityDistance": 11.335604,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at The Westin Seattle, you'll be centrally laocated in Seattle, steps from Westlake Center and minutes from Pacific Place. This 4-star hotel is close to",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/16673_260_t.jpg",
-      "tripAdvisorRating": 4,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/1",
+        "https://rickandmortyapi.com/api/episode/2",
+        "https://rickandmortyapi.com/api/episode/3",
+        "https://rickandmortyapi.com/api/episode/4",
+        "https://rickandmortyapi.com/api/episode/5",
+        "https://rickandmortyapi.com/api/episode/6",
+        "https://rickandmortyapi.com/api/episode/7",
+        "https://rickandmortyapi.com/api/episode/8",
+        "https://rickandmortyapi.com/api/episode/9",
+        "https://rickandmortyapi.com/api/episode/10",
+        "https://rickandmortyapi.com/api/episode/11",
+        "https://rickandmortyapi.com/api/episode/12",
+        "https://rickandmortyapi.com/api/episode/13",
+        "https://rickandmortyapi.com/api/episode/14",
+        "https://rickandmortyapi.com/api/episode/15",
+        "https://rickandmortyapi.com/api/episode/16",
+        "https://rickandmortyapi.com/api/episode/17",
+        "https://rickandmortyapi.com/api/episode/18",
+        "https://rickandmortyapi.com/api/episode/19",
+        "https://rickandmortyapi.com/api/episode/20",
+        "https://rickandmortyapi.com/api/episode/21",
+        "https://rickandmortyapi.com/api/episode/22",
+        "https://rickandmortyapi.com/api/episode/23",
+        "https://rickandmortyapi.com/api/episode/24",
+        "https://rickandmortyapi.com/api/episode/25",
+        "https://rickandmortyapi.com/api/episode/26",
+        "https://rickandmortyapi.com/api/episode/27",
+        "https://rickandmortyapi.com/api/episode/28",
+        "https://rickandmortyapi.com/api/episode/29",
+        "https://rickandmortyapi.com/api/episode/30",
+        "https://rickandmortyapi.com/api/episode/31",
+        "https://rickandmortyapi.com/api/episode/32",
+        "https://rickandmortyapi.com/api/episode/33",
+        "https://rickandmortyapi.com/api/episode/34",
+        "https://rickandmortyapi.com/api/episode/35",
+        "https://rickandmortyapi.com/api/episode/36",
+        "https://rickandmortyapi.com/api/episode/37",
+        "https://rickandmortyapi.com/api/episode/38",
+        "https://rickandmortyapi.com/api/episode/39",
+        "https://rickandmortyapi.com/api/episode/40",
+        "https://rickandmortyapi.com/api/episode/41",
+        "https://rickandmortyapi.com/api/episode/42",
+        "https://rickandmortyapi.com/api/episode/43",
+        "https://rickandmortyapi.com/api/episode/44",
+        "https://rickandmortyapi.com/api/episode/45",
+        "https://rickandmortyapi.com/api/episode/46",
+        "https://rickandmortyapi.com/api/episode/47",
+        "https://rickandmortyapi.com/api/episode/48",
+        "https://rickandmortyapi.com/api/episode/49",
+        "https://rickandmortyapi.com/api/episode/50",
+        "https://rickandmortyapi.com/api/episode/51"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/2",
+      "created": "2017-11-04T18:50:21.651Z"
     },
     {
-      "id": "3",
-      "type": "hotel",
-      "name": "Sheraton Seattle Hotel",
-      "created": 1464777092619,
-      "modified": 1464777092619,
-      "address1": "1400 6th Ave",
-      "airportCode": "SEA",
-      "amenityMask": 262147,
-      "city": "Seattle",
-      "confidenceRating": 30,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/164116/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 320,
-      "hotelId": 164116,
-      "hotelInDestination": true,
-      "hotelRating": 4,
+      "id": 3,
+      "bestSentences": [
+        "Prueba Summer",
+        "Nueva prueba"
+      ],
+      "name": "Summer Smith",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Female",
+      "origin": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
       "location": {
-        "latitude": 47.61017,
-        "longitude": -122.33357
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
       },
-      "locationDescription": "Near Pike Place Market",
-      "lowRate": 205,
-      "metadata": {
-        "path": "/hotels/3"
-      },
-      "postalCode": 98101,
-      "propertyCategory": 1,
-      "proximityDistance": 11.115907,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at Sheraton Seattle Hotel, you'll be centrally located in Seattle, steps from 5th Avenue Theater and Washington State Convention Center. This 4-star",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/25290_88_t.jpg",
-      "tripAdvisorRating": 4,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/6",
+        "https://rickandmortyapi.com/api/episode/7",
+        "https://rickandmortyapi.com/api/episode/8",
+        "https://rickandmortyapi.com/api/episode/9",
+        "https://rickandmortyapi.com/api/episode/10",
+        "https://rickandmortyapi.com/api/episode/11",
+        "https://rickandmortyapi.com/api/episode/12",
+        "https://rickandmortyapi.com/api/episode/14",
+        "https://rickandmortyapi.com/api/episode/15",
+        "https://rickandmortyapi.com/api/episode/16",
+        "https://rickandmortyapi.com/api/episode/17",
+        "https://rickandmortyapi.com/api/episode/18",
+        "https://rickandmortyapi.com/api/episode/19",
+        "https://rickandmortyapi.com/api/episode/20",
+        "https://rickandmortyapi.com/api/episode/21",
+        "https://rickandmortyapi.com/api/episode/22",
+        "https://rickandmortyapi.com/api/episode/23",
+        "https://rickandmortyapi.com/api/episode/24",
+        "https://rickandmortyapi.com/api/episode/25",
+        "https://rickandmortyapi.com/api/episode/26",
+        "https://rickandmortyapi.com/api/episode/27",
+        "https://rickandmortyapi.com/api/episode/29",
+        "https://rickandmortyapi.com/api/episode/30",
+        "https://rickandmortyapi.com/api/episode/31",
+        "https://rickandmortyapi.com/api/episode/32",
+        "https://rickandmortyapi.com/api/episode/33",
+        "https://rickandmortyapi.com/api/episode/34",
+        "https://rickandmortyapi.com/api/episode/35",
+        "https://rickandmortyapi.com/api/episode/36",
+        "https://rickandmortyapi.com/api/episode/38",
+        "https://rickandmortyapi.com/api/episode/39",
+        "https://rickandmortyapi.com/api/episode/40",
+        "https://rickandmortyapi.com/api/episode/41",
+        "https://rickandmortyapi.com/api/episode/42",
+        "https://rickandmortyapi.com/api/episode/43",
+        "https://rickandmortyapi.com/api/episode/44",
+        "https://rickandmortyapi.com/api/episode/45",
+        "https://rickandmortyapi.com/api/episode/46",
+        "https://rickandmortyapi.com/api/episode/47",
+        "https://rickandmortyapi.com/api/episode/48",
+        "https://rickandmortyapi.com/api/episode/49",
+        "https://rickandmortyapi.com/api/episode/51"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/3",
+      "created": "2017-11-04T19:09:56.428Z"
     },
     {
-      "id": "4",
-      "type": "hotel",
-      "name": "The Edgewater - A Noble House Hotel",
-      "created": 1464777092643,
-      "modified": 1464777092643,
-      "address1": "Pier 67, 2411 Alaskan Way",
-      "airportCode": "SEA",
-      "amenityMask": 5701635,
-      "city": "Burlingame",
-      "confidenceRating": 95,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/127092/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 269,
-      "hotelId": 127092,
-      "hotelInDestination": true,
-      "hotelRating": 4,
+      "id": 4,
+      "bestSentences": [],
+      "name": "Beth Smith",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Female",
+      "origin": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
       "location": {
-        "latitude": 47.61252,
-        "longitude": -122.35013
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
       },
-      "locationDescription": "Near Pike Place Market",
-      "lowRate": 179,
-      "metadata": {
-        "path": "/hotels/4"
-      },
-      "postalCode": 98121,
-      "propertyCategory": 1,
-      "proximityDistance": 11.898841,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at The Edgewater - A Noble House Hotel, you'll be centrally located in Seattle, steps from Bell Street Cruise Terminal at Pier 66 and minutes from",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/11133_169_t.jpg",
-      "tripAdvisorRating": 4,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/6",
+        "https://rickandmortyapi.com/api/episode/7",
+        "https://rickandmortyapi.com/api/episode/8",
+        "https://rickandmortyapi.com/api/episode/9",
+        "https://rickandmortyapi.com/api/episode/10",
+        "https://rickandmortyapi.com/api/episode/11",
+        "https://rickandmortyapi.com/api/episode/12",
+        "https://rickandmortyapi.com/api/episode/14",
+        "https://rickandmortyapi.com/api/episode/15",
+        "https://rickandmortyapi.com/api/episode/16",
+        "https://rickandmortyapi.com/api/episode/18",
+        "https://rickandmortyapi.com/api/episode/19",
+        "https://rickandmortyapi.com/api/episode/20",
+        "https://rickandmortyapi.com/api/episode/21",
+        "https://rickandmortyapi.com/api/episode/22",
+        "https://rickandmortyapi.com/api/episode/23",
+        "https://rickandmortyapi.com/api/episode/24",
+        "https://rickandmortyapi.com/api/episode/25",
+        "https://rickandmortyapi.com/api/episode/26",
+        "https://rickandmortyapi.com/api/episode/27",
+        "https://rickandmortyapi.com/api/episode/28",
+        "https://rickandmortyapi.com/api/episode/29",
+        "https://rickandmortyapi.com/api/episode/30",
+        "https://rickandmortyapi.com/api/episode/31",
+        "https://rickandmortyapi.com/api/episode/32",
+        "https://rickandmortyapi.com/api/episode/33",
+        "https://rickandmortyapi.com/api/episode/34",
+        "https://rickandmortyapi.com/api/episode/35",
+        "https://rickandmortyapi.com/api/episode/36",
+        "https://rickandmortyapi.com/api/episode/38",
+        "https://rickandmortyapi.com/api/episode/39",
+        "https://rickandmortyapi.com/api/episode/40",
+        "https://rickandmortyapi.com/api/episode/41",
+        "https://rickandmortyapi.com/api/episode/42",
+        "https://rickandmortyapi.com/api/episode/43",
+        "https://rickandmortyapi.com/api/episode/44",
+        "https://rickandmortyapi.com/api/episode/45",
+        "https://rickandmortyapi.com/api/episode/46",
+        "https://rickandmortyapi.com/api/episode/47",
+        "https://rickandmortyapi.com/api/episode/48",
+        "https://rickandmortyapi.com/api/episode/49",
+        "https://rickandmortyapi.com/api/episode/51"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/4",
+      "created": "2017-11-04T19:22:43.665Z"
     },
     {
-      "id": "5",
-      "type": "hotel",
-      "name": "Hotel Max, a Provenance Hotel",
-      "created": 1464777092667,
-      "modified": 1464777092667,
-      "address1": "620 Stewart St",
-      "airportCode": "SEA",
-      "amenityMask": 3,
-      "city": "Burlingame",
-      "confidenceRating": 52,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/113426/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 188.202,
-      "hotelId": 113426,
-      "hotelInDestination": true,
-      "hotelRating": 3.5,
+      "id": 5,
+      "bestSentences": [],
+      "name": "Jerry Smith",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
       "location": {
-        "latitude": 47.61381,
-        "longitude": -122.33686
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
       },
-      "locationDescription": "Near Pike Place Market",
-      "lowRate": 187.202,
-      "metadata": {
-        "path": "/hotels/5"
-      },
-      "postalCode": 98101,
-      "propertyCategory": 1,
-      "proximityDistance": 11.293709,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at Hotel Max, a Provenance Hotel in Seattle (Belltown), you&apos;ll be minutes from Westlake Center and Washington State Convention Center. This hotel is",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/28647_30_t.jpg",
-      "tripAdvisorRating": 4,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/6",
+        "https://rickandmortyapi.com/api/episode/7",
+        "https://rickandmortyapi.com/api/episode/8",
+        "https://rickandmortyapi.com/api/episode/9",
+        "https://rickandmortyapi.com/api/episode/10",
+        "https://rickandmortyapi.com/api/episode/11",
+        "https://rickandmortyapi.com/api/episode/12",
+        "https://rickandmortyapi.com/api/episode/13",
+        "https://rickandmortyapi.com/api/episode/14",
+        "https://rickandmortyapi.com/api/episode/15",
+        "https://rickandmortyapi.com/api/episode/16",
+        "https://rickandmortyapi.com/api/episode/18",
+        "https://rickandmortyapi.com/api/episode/19",
+        "https://rickandmortyapi.com/api/episode/20",
+        "https://rickandmortyapi.com/api/episode/21",
+        "https://rickandmortyapi.com/api/episode/22",
+        "https://rickandmortyapi.com/api/episode/23",
+        "https://rickandmortyapi.com/api/episode/26",
+        "https://rickandmortyapi.com/api/episode/29",
+        "https://rickandmortyapi.com/api/episode/30",
+        "https://rickandmortyapi.com/api/episode/31",
+        "https://rickandmortyapi.com/api/episode/32",
+        "https://rickandmortyapi.com/api/episode/33",
+        "https://rickandmortyapi.com/api/episode/35",
+        "https://rickandmortyapi.com/api/episode/36",
+        "https://rickandmortyapi.com/api/episode/38",
+        "https://rickandmortyapi.com/api/episode/39",
+        "https://rickandmortyapi.com/api/episode/40",
+        "https://rickandmortyapi.com/api/episode/41",
+        "https://rickandmortyapi.com/api/episode/42",
+        "https://rickandmortyapi.com/api/episode/43",
+        "https://rickandmortyapi.com/api/episode/44",
+        "https://rickandmortyapi.com/api/episode/45",
+        "https://rickandmortyapi.com/api/episode/46",
+        "https://rickandmortyapi.com/api/episode/47",
+        "https://rickandmortyapi.com/api/episode/48",
+        "https://rickandmortyapi.com/api/episode/49",
+        "https://rickandmortyapi.com/api/episode/50",
+        "https://rickandmortyapi.com/api/episode/51"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/5",
+      "created": "2017-11-04T19:26:56.301Z"
     },
     {
-      "id": "6",
-      "type": "hotel",
-      "name": "Hotel Monaco Seattle, a Kimpton Hotel",
-      "created": 1464777092694,
-      "modified": 1464777092694,
-      "address1": "1101 4th Ave",
-      "airportCode": "SEA",
-      "amenityMask": 1310720,
-      "city": "Seattle",
-      "confidenceRating": 52,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/132138/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 489,
-      "hotelId": 132138,
-      "hotelInDestination": true,
-      "hotelRating": 4,
+      "id": 6,
+      "bestSentences": [],
+      "name": "Abadango Cluster Princess",
+      "status": "Alive",
+      "species": "Alien",
+      "type": "",
+      "gender": "Female",
+      "origin": {
+        "name": "Abadango",
+        "url": "https://rickandmortyapi.com/api/location/2"
+      },
       "location": {
-        "latitude": 47.60682,
-        "longitude": -122.33358
+        "name": "Abadango",
+        "url": "https://rickandmortyapi.com/api/location/2"
       },
-      "locationDescription": "Near Pike Place Market",
-      "lowRate": 189,
-      "metadata": {
-        "path": "/hotels/6"
-      },
-      "postalCode": 98101,
-      "propertyCategory": 1,
-      "proximityDistance": 11.097676,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at Hotel Monaco Seattle, a Kimpton Hotel, you&apos;ll be centrally located in Seattle, steps from Seattle Public Library and Safeco Headquarters. This 4-star",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/62800_122_t.jpg",
-      "tripAdvisorRating": 4.5,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/6.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/27"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/6",
+      "created": "2017-11-04T19:50:28.250Z"
     },
     {
-      "id": "7",
-      "type": "hotel",
-      "name": "Hotel Deca - A Noble House Hotel",
-      "created": 1464777092721,
-      "modified": 1464777092721,
-      "address1": "4507 Brooklyn Avenue NE",
-      "airportCode": "SEA",
-      "amenityMask": 3,
-      "city": "Burlingame",
-      "confidenceRating": 95,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/191964/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 159,
-      "hotelId": 191964,
-      "hotelInDestination": true,
-      "hotelRating": 3.5,
+      "id": 7,
+      "bestSentences": [],
+      "name": "Abradolf Lincler",
+      "status": "unknown",
+      "species": "Human",
+      "type": "Genetic experiment",
+      "gender": "Male",
+      "origin": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
       "location": {
-        "latitude": 47.66143,
-        "longitude": -122.31429
+        "name": "Testicle Monster Dimension",
+        "url": "https://rickandmortyapi.com/api/location/21"
       },
-      "locationDescription": "In Seattle (University District)",
-      "lowRate": 119,
-      "metadata": {
-        "path": "/hotels/7"
-      },
-      "postalCode": 98105,
-      "propertyCategory": 1,
-      "proximityDistance": 11.145046,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at Hotel Deca - A Noble House Hotel in Seattle (University District), you&apos;ll be minutes from Burke Museum of Natural History and Culture and close to",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/19023_103_t.jpg",
-      "tripAdvisorRating": 4,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/7.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/10",
+        "https://rickandmortyapi.com/api/episode/11"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/7",
+      "created": "2017-11-04T19:59:20.523Z"
     },
     {
-      "id": "8",
-      "type": "hotel",
-      "name": "W Seattle",
-      "created": 1464777092747,
-      "modified": 1464777092747,
-      "address1": "1112 4th Ave",
-      "airportCode": "SEA",
-      "amenityMask": 7798785,
-      "city": "Seattle",
-      "confidenceRating": 5,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/213497/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 210,
-      "hotelId": 213497,
-      "hotelInDestination": true,
-      "hotelRating": 4,
+      "id": 8,
+      "bestSentences": [],
+      "name": "Adjudicator Rick",
+      "status": "Dead",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
       "location": {
-        "latitude": 47.60688,
-        "longitude": -122.33361
+        "name": "Citadel of Ricks",
+        "url": "https://rickandmortyapi.com/api/location/3"
       },
-      "locationDescription": "Near Pike Place Market",
-      "lowRate": 175,
-      "metadata": {
-        "path": "/hotels/8"
-      },
-      "postalCode": 98101,
-      "propertyCategory": 1,
-      "proximityDistance": 11.09939,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at W Seattle, you&apos;ll be centrally located in Seattle, steps from Seattle Public Library and Safeco Headquarters. This 4-star hotel is close to Pike Place",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/284304_50_t.jpg",
-      "tripAdvisorRating": 4,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/8.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/28"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/8",
+      "created": "2017-11-04T20:03:34.737Z"
     },
     {
-      "id": "9",
-      "type": "hotel",
-      "name": "Hotel Andra",
-      "created": 1464777092776,
-      "modified": 1464777092776,
-      "address1": "2000 4th Ave",
-      "airportCode": "SEA",
-      "amenityMask": 1441795,
-      "city": "Seattle",
-      "confidenceRating": 45,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/119562/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 239.5368,
-      "hotelId": 119562,
-      "hotelInDestination": true,
-      "hotelRating": 4,
+      "id": 9,
+      "bestSentences": [],
+      "name": "Agency Director",
+      "status": "Dead",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
       "location": {
-        "latitude": 47.61318,
-        "longitude": -122.34009
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
       },
-      "locationDescription": "Near Pike Place Market",
-      "lowRate": 189.4252,
-      "metadata": {
-        "path": "/hotels/9"
-      },
-      "postalCode": 98121,
-      "propertyCategory": 1,
-      "proximityDistance": 11.438348,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at Hotel Andra, you&apos;ll be centrally located in Seattle, minutes from Westlake Center and Pike Place Market. This 4-star hotel is within close proximity",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/16950_158_t.jpg",
-      "tripAdvisorRating": 4.5,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-12345-4.gif"
+      "image": "https://rickandmortyapi.com/api/character/avatar/9.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/24"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/9",
+      "created": "2017-11-04T20:06:54.976Z"
     },
     {
-      "id": "10",
-      "type": "hotel",
-      "name": "The Maxwell Hotel - Pineapple Hospitality",
-      "created": 1464777092809,
-      "modified": 1464777092809,
-      "address1": "300 Roy St",
-      "airportCode": "SEA",
-      "amenityMask": 7798786,
-      "city": "Seattle",
-      "confidenceRating": 95,
-      "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/342070/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
-      "highRate": 289,
-      "hotelId": 342070,
-      "hotelInDestination": true,
-      "hotelRating": 3,
+      "id": 10,
+      "bestSentences": [],
+      "name": "Alan Rails",
+      "status": "Dead",
+      "species": "Human",
+      "type": "Superhuman (Ghost trains summoner)",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
       "location": {
-        "latitude": 47.62561,
-        "longitude": -122.35129
+        "name": "Worldender's lair",
+        "url": "https://rickandmortyapi.com/api/location/4"
       },
-      "locationDescription": "Near Pacific Northwest Ballet",
-      "lowRate": 229,
-      "metadata": {
-        "path": "/hotels/10"
+      "image": "https://rickandmortyapi.com/api/character/avatar/10.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/25"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/10",
+      "created": "2017-11-04T20:19:09.017Z"
+    },
+    {
+      "id": 11,
+      "bestSentences": [],
+      "name": "Albert Einstein",
+      "status": "Dead",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "Earth (C-137)",
+        "url": "https://rickandmortyapi.com/api/location/1"
       },
-      "postalCode": 98109,
-      "propertyCategory": 1,
-      "proximityDistance": 12.074359,
-      "proximityUnit": "MI",
-      "rateCurrencyCode": "USD",
-      "shortDescription": "With a stay at The Maxwell Hotel - Pineapple Hospitality, you&apos;ll be centrally located in Seattle, steps from Pacific Northwest Ballet and Teatro ZinZanni. This",
-      "stateProvinceCode": "WA",
-      "thumbNailUrl": "/thumbnails/3445681_43_t.jpg",
-      "tripAdvisorRating": 4.5,
-      "tripAdvisorRatingUrl": "http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-12345-4.gif"
+      "location": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/11.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/12"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/11",
+      "created": "2017-11-04T20:20:20.965Z"
+    },
+    {
+      "id": 12,
+      "bestSentences": [],
+      "name": "Alexander",
+      "status": "Dead",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "Earth (C-137)",
+        "url": "https://rickandmortyapi.com/api/location/1"
+      },
+      "location": {
+        "name": "Anatomy Park",
+        "url": "https://rickandmortyapi.com/api/location/5"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/12.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/3"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/12",
+      "created": "2017-11-04T20:32:33.144Z"
+    },
+    {
+      "id": 13,
+      "bestSentences": [],
+      "name": "Alien Googah",
+      "status": "unknown",
+      "species": "Alien",
+      "type": "",
+      "gender": "unknown",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/13.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/31"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/13",
+      "created": "2017-11-04T20:33:30.779Z"
+    },
+    {
+      "id": 14,
+      "bestSentences": [],
+      "name": "Alien Morty",
+      "status": "unknown",
+      "species": "Alien",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "Citadel of Ricks",
+        "url": "https://rickandmortyapi.com/api/location/3"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/14.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/10"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/14",
+      "created": "2017-11-04T20:51:31.373Z"
+    },
+    {
+      "id": 15,
+      "bestSentences": [],
+      "name": "Alien Rick",
+      "status": "unknown",
+      "species": "Alien",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "Citadel of Ricks",
+        "url": "https://rickandmortyapi.com/api/location/3"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/15.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/10"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/15",
+      "created": "2017-11-04T20:56:13.215Z"
+    },
+    {
+      "id": 16,
+      "bestSentences": [],
+      "name": "Amish Cyborg",
+      "status": "Dead",
+      "species": "Alien",
+      "type": "Parasite",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/16.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/15"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/16",
+      "created": "2017-11-04T21:12:45.235Z"
+    },
+    {
+      "id": 17,
+      "bestSentences": [],
+      "name": "Annie",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Female",
+      "origin": {
+        "name": "Earth (C-137)",
+        "url": "https://rickandmortyapi.com/api/location/1"
+      },
+      "location": {
+        "name": "Anatomy Park",
+        "url": "https://rickandmortyapi.com/api/location/5"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/17.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/3"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/17",
+      "created": "2017-11-04T22:21:24.481Z"
+    },
+    {
+      "id": 18,
+      "bestSentences": [],
+      "name": "Antenna Morty",
+      "status": "Alive",
+      "species": "Human",
+      "type": "Human with antennae",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "Citadel of Ricks",
+        "url": "https://rickandmortyapi.com/api/location/3"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/18.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/10",
+        "https://rickandmortyapi.com/api/episode/28"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/18",
+      "created": "2017-11-04T22:25:29.008Z"
+    },
+    {
+      "id": 19,
+      "bestSentences": [],
+      "name": "Antenna Rick",
+      "status": "unknown",
+      "species": "Human",
+      "type": "Human with antennae",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "unknown",
+        "url": ""
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/10"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/19",
+      "created": "2017-11-04T22:28:13.756Z"
+    },
+    {
+      "id": 20,
+      "bestSentences": [],
+      "name": "Ants in my Eyes Johnson",
+      "status": "unknown",
+      "species": "Human",
+      "type": "Human with ants in his eyes",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "Interdimensional Cable",
+        "url": "https://rickandmortyapi.com/api/location/6"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/8"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/20",
+      "created": "2017-11-04T22:34:53.659Z"
     }
   ]
 }

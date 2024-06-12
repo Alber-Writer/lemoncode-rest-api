@@ -2,7 +2,7 @@ import * as apiModel from './api/character.api-model';
 import * as viewModel from './character.vm';
 
 export const mapCharacterFromApiToVm = (
-  character: apiModel.Character
+  character: apiModel.CharacterEntityApi
 ): viewModel.Character => ({
   ...character,
   status: character.status,
@@ -13,9 +13,10 @@ export const mapCharacterFromApiToVm = (
   location: character.location,
   image: character.image,
   episode: character.episode,
+  bestSentences: character.bestSentences
 });
 
-export const mapCharacterFromVmToApi = (character: viewModel.Character): apiModel.Character =>
+export const mapCharacterFromVmToApi = (character: viewModel.Character): apiModel.CharacterEntityApi =>
   (({
     ...character,
     status: character.status,
@@ -26,4 +27,5 @@ export const mapCharacterFromVmToApi = (character: viewModel.Character): apiMode
     location: character.location,
     image: character.image,
     episode: character.episode,
-  } as unknown) as apiModel.Character);
+    bestSentences:character.bestSentences
+  } as unknown) as apiModel.CharacterEntityApi);

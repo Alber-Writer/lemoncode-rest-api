@@ -7,7 +7,7 @@ import {
 } from './character.mappers';
 import { CharacterComponent } from './character.component';
 import { Box, Typography } from '@mui/material';
-import { ReturnButton } from '../../common/components/return-button/return-button';
+import { ReturnButton } from 'common/components/return-button/return-button';
 
 export const CharacterContainer: React.FunctionComponent = () => {
   const [character, setCharacter] = React.useState<Character>(

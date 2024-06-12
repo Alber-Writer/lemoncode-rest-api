@@ -17,7 +17,10 @@ export interface Character extends ResourceBase {
   location: CharacterLocation
   image: string
   episode: string[]
+  bestSentences:string[]
 }
+
+
 
 export const createEmptyCharacter = (): Character => ({
   id: 1,
@@ -40,6 +43,7 @@ export const createEmptyCharacter = (): Character => ({
   ],
   url: '',
   created: '',
+  bestSentences:['']
 });
 
 
